@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Carrossel CSS externo -->
+    <link rel="stylesheet" href="https://www.loopnerd.com.br/artigos/jquery/carrossel-html-e-css-pronto/css/style-carousel.css">
+
+    <!-- Favicon e CSS do projeto -->
+    <link rel="shortcut icon" href="../imagens/icon1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Fonte Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <title>SkillUp</title>
+</head>
+<body>
+    <div class="caixa-estilo">
+
+        <!-- MENU SUPERIOR -->
+        <header class="top-nav">
+            <img src="../imagens/logo-11.png" alt="Logo" class="logo">
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+                <div class="menu-button"></div>
+            </label>
+
+            <ul class="menu">
+                <li class="menu-item"><a href="#banner" class="menu-item-link">Início</a></li>
+                <li class="menu-item"><a href="#servicos" class="menu-item-link">Serviços</a></li>
+                <li class="menu-item"><a href="sobre.html" class="menu-item-link">Sobre nós</a></li>
+                <li class="menu-item"><a href="#contato" class="menu-item-link">Contato</a></li>
+            </ul>
+        </header>
+
+        <!-- BANNER -->
+        <div class="banner" id="banner">
+            <div class="banner-conteudo">
+                <h1 class="banner-titulo">Séries que<br>transformam seu<br>futuro profissional.</h1>
+
+                <div class="banner-frases">
+                    <p class="banner-frase">Novos episódios semanais</p>
+                    <p class="banner-frase">Sem contratos. Sem limites.</p>
+                </div>
+
+                <a href="#" class="banner-button">Assista já</a>
+            </div>
+
+            <div class="banner-imagem">
+                <img class="banner-imagem-img" src="../imagens/imagem1.jpg" alt="Pessoa usando laptop em ambiente profissional">
+            </div>
+        </div>
+
+        <!-- NOVA SEÇÃO INTERATIVA -->
+<section class="interacao-usuario">
+    <h2>Qual conteúdo você quer explorar hoje?</h2>
+    <div class="interacao-inputs">
+        <input type="text" id="usuario-input" placeholder="Digite seu interesse...">
+        <button id="btn-enviar">Descobrir</button>
+    </div>
+    <p id="resposta-usuario" class="resposta"></p>
+</section>
+
+<!-- SEÇÃO: O QUE FAZEMOS -->
+<section class="secao sobre-fazemos">
+    ...
+</section>
+
+        <!-- SEÇÃO: O QUE FAZEMOS -->
+        <section class="secao sobre-fazemos">
+            <div class="secao-imagem">
+                <img src="../imagens/imagem4.jpeg" alt="Imagem sobre o que fazemos">
+            </div>
+            <div class="secao-texto">
+                <h2>O que fazemos</h2>
+                <p>Produzimos séries e conteúdos educativos que transformam carreiras por meio de conhecimento direto.</p>
+                <p>Oferecemos conteúdo prático, acessível e atualizado semanalmente.</p>
+            </div>            
+        </section>
+
+        <!-- SEÇÃO: QUEM SOMOS -->
+        <section class="secao quem-somos">
+            <div class="secao-texto">
+                <h2>Quem somos</h2>
+                <p>Somos uma equipe comprometida com a educação moderna. Valorizamos inovação, simplicidade e aprendizado contínuo.</p>
+            </div>
+            <div class="secao-imagem">
+                <img src="../imagens/imagem3.jpeg" alt="Imagem da equipe">
+            </div>
+        </section>
+
+        <!-- SEÇÃO: NOSSOS SERVIÇOS -->
+        <section class="servicos">
+            <h2>Nossos serviços</h2>
+            <div class="cards-servicos">
+                <div class="card">
+                    <h3>Consultorias</h3>
+                    <p>Acompanhamento profissional para evolução individual.</p>
+                </div>
+                <div class="card">
+                    <h3>Séries Educativas</h3>
+                    <p>Conteúdo prático com novos episódios semanais.</p>
+                </div>
+                <div class="card">
+                    <h3>Workshops</h3>
+                    <p>Eventos presenciais e online sobre temas atuais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARROSSEL -->
+        <div class="carrossel">
+            <div class="carrossel-imagens">
+                <img src="../imagens/carrossel1.jpeg" alt="Imagem 1">
+                <img src="../imagens/carrossel2.jpeg" alt="Imagem 2">
+                <img src="../imagens/carrossel3.jpeg" alt="Imagem 3">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+            <div class="dots"></div>
+        </div>
+
+        <!-- SEÇÃO CONTATO -->
+        <footer class="contato">
+            <h2>Contato</h2>
+            <p>Fale conosco pelas redes sociais:</p>
+            <div class="icones">
+                <a href="#"><img src="../imagens/insta.png" alt="Instagram"></a>
+                <a href="#"><img src="../imagens/face.png" alt="Facebook"></a>
+                <a href="#"><img src="../imagens/twi.png" alt="Twitter"></a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="../script.js"></script>
+</body>
+</html>
+
+
+
+
