@@ -2,7 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 import mysql.connector
 import os
 
-app = Flask(__name__)
+# IMPORTANTE: caminho relativo à pasta api/
+app = Flask(__name__, 
+            template_folder='../templates',
+            static_folder='../static')
 
 # Configuração segura para Nuvem ou Local
 def get_db_connection():
@@ -13,11 +16,6 @@ def get_db_connection():
         database=os.environ.get("DB_NAME", "saep"),
         port=int(os.environ.get("DB_PORT", 3306))
     )
-
-# ROTA PARA SERVIR ARQUIVOS ESTÁTICOS (importante para Vercel)
-@app.route('/static/<path:path>')
-def send_static(path):
-    return send_from_directory('static', path)
 
 @app.route("/")
 def login():
@@ -62,5 +60,6 @@ def cadastrar():
 
     return render_template("index.html")
 
+# Para Vercel
 if __name__ == "__main__":
     app.run(debug=True)
