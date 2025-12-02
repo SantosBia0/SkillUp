@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon e CSS do projeto -->
-    <link rel="shortcut icon" href="../imagens/icon1.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/icon1.jpg') }}" type="image/x-icon">
 
     <!-- Fonte Material Symbols -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/LoginECadastro.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <title>Login & Cadastro</title>
 </head>
@@ -48,6 +47,6 @@
             </div>
         </div>
     </div>
-    <script src="../script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
