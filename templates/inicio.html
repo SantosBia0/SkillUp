@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Carrossel CSS externo -->
-    <link rel="stylesheet" href="https://www.loopnerd.com.br/artigos/jquery/carrossel-html-e-css-pronto/css/style-carousel.css">
-
     <!-- Favicon e CSS do projeto -->
-    <link rel="shortcut icon" href="../imagens/icon1.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="/imagens/icon1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Fonte Material Symbols -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -21,7 +18,7 @@
 
         <!-- MENU SUPERIOR -->
         <header class="top-nav">
-            <img src="{{ url_for('static', filename='imagens/logo-11.png') }}" alt="Logo" class="logo">
+            <img src="/imagens/logo-11.png" alt="Logo" class="logo">
             <input id="menu-toggle" type="checkbox" />
             <label class="menu-button-container" for="menu-toggle">
                 <div class="menu-button"></div>
@@ -49,29 +46,24 @@
             </div>
 
             <div class="banner-imagem">
-                <img class="banner-imagem-img" src="{{ url_for('static', filename='imagens/imagem1.jpg') }}" alt="Pessoa usando laptop em ambiente profissional">
+                <img class="banner-imagem-img" src="/imagens/imagem1.jpg" alt="Pessoa usando laptop em ambiente profissional">
             </div>
         </div>
 
         <!-- NOVA SEÇÃO INTERATIVA -->
-<section class="interacao-usuario">
-    <h2>Qual conteúdo você quer explorar hoje?</h2>
-    <div class="interacao-inputs">
-        <input type="text" id="usuario-input" placeholder="Digite seu interesse...">
-        <button id="btn-enviar">Descobrir</button>
-    </div>
-    <p id="resposta-usuario" class="resposta"></p>
-</section>
-
-<!-- SEÇÃO: O QUE FAZEMOS -->
-<section class="secao sobre-fazemos">
-    ...
-</section>
+        <section class="interacao-usuario">
+            <h2>Qual conteúdo você quer explorar hoje?</h2>
+            <div class="interacao-inputs">
+                <input type="text" id="usuario-input" placeholder="Digite seu interesse...">
+                <button id="btn-enviar">Descobrir</button>
+            </div>
+            <p id="resposta-usuario" class="resposta"></p>
+        </section>
 
         <!-- SEÇÃO: O QUE FAZEMOS -->
         <section class="secao sobre-fazemos">
             <div class="secao-imagem">
-                <img src="{{ url_for('static', filename='imagens/imagem4.jpeg') }}" alt="Imagem sobre o que fazemos">
+                <img src="/imagens/imagem4.jpeg" alt="Imagem sobre o que fazemos">
             </div>
             <div class="secao-texto">
                 <h2>O que fazemos</h2>
@@ -87,7 +79,7 @@
                 <p>Somos uma equipe comprometida com a educação moderna. Valorizamos inovação, simplicidade e aprendizado contínuo.</p>
             </div>
             <div class="secao-imagem">
-                <img src="{{ url_for('static', filename='imagens/imagem3.jpeg') }}" alt="Imagem da equipe">
+                <img src="/imagens/imagem3.jpeg" alt="Imagem da equipe">
             </div>
         </section>
 
@@ -113,9 +105,9 @@
         <!-- CARROSSEL -->
         <div class="carrossel">
             <div class="carrossel-imagens">
-                <img src="{{ url_for('static', filename='imagens/carrosel1.jpeg') }}" alt="Imagem 1">
-                <img src="{{ url_for('static', filename='imagens/carrosel2.jpeg') }}" alt="Imagem 2">
-                <img src="{{ url_for('static', filename='imagens/carrosel3.jpeg') }}" alt="Imagem 3">
+                <img src="/imagens/carrosel1.jpeg" alt="Imagem 1">
+                <img src="/imagens/carrosel2.jpeg" alt="Imagem 2">
+                <img src="/imagens/carrosel3.jpeg" alt="Imagem 3">
             </div>
             <button class="prev">&#10094;</button>
             <button class="next">&#10095;</button>
@@ -127,19 +119,15 @@
             <h2>Contato</h2>
             <p>Fale conosco pelas redes sociais:</p>
             <div class="icones">
-                <a href="#"><img src="../imagens/insta.png" alt="Instagram"></a>
-                <a href="#"><img src="../imagens/face.png" alt="Facebook"></a>
-                <a href="#"><img src="../imagens/twi.png" alt="Twitter"></a>
+                <a href="#"><img src="/imagens/insta.png" alt="Instagram"></a>
+                <a href="#"><img src="/imagens/face.png" alt="Facebook"></a>
+                <a href="#"><img src="/imagens/twi.png" alt="Twitter"></a>
             </div>
         </footer>
 
     </div>
 
     <!-- SCRIPT -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
-
-
-
-

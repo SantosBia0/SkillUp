@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Favicon e CSS do projeto -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/icon1.jpg') }}" type="image/x-icon">
-
+    <link rel="shortcut icon" href="/imagens/icon1.jpg" type="image/x-icon">
     <!-- Fonte Material Symbols -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Login & Cadastro</title>
 </head>
 
@@ -20,10 +18,12 @@
             <!-- Tela de Login -->
             <div class="container-login active" id="loginBox">
                 <h2 class="h2-login">Login</h2>
-                <form class="form-login" id="forms" action="{{ url_for('login') }}" method="POST">
-                    <input type="text" name="usuario" placeholder="Usuário" class="input-field-login" required minlength="3">
+                <form class="form-login" action="{{ url_for('login') }}" method="POST">
+                    <input type="text" name="usuario" placeholder="Usuário" class="input-field-login" required
+                        minlength="3">
                     <div class="input-group-login">
-                        <input type="password" name="senha" placeholder="Senha (mín. 6 caracteres)" class="input-field-login senha" required minlength="6">
+                        <input type="password" name="senha" placeholder="Senha (mín. 6 caracteres)"
+                            class="input-field-login senha" required minlength="6">
                         <span class="toggle-password-login">👁️</span>
                     </div>
                     <button type="submit" class="btn-login">Entrar</button>
@@ -33,12 +33,15 @@
             <!-- Tela de Cadastro -->
             <div class="container-login" id="cadastroBox">
                 <h2 class="h2-login">Cadastro</h2>
-                <form class="forms-login" id="forms" action="{{ url_for('cadastrar') }}" method="POST">
-                    <input type="text" name="nome" placeholder="Nome completo" class="input-field-login" required minlength="3">
+                <form class="form-login" action="{{ url_for('cadastrar') }}" method="POST">
+                    <input type="text" name="nome" placeholder="Nome completo" class="input-field-login" required
+                        minlength="3">
                     <input type="email" name="email" placeholder="E-mail" class="input-field-login" required>
-                    <input type="text" name="usuario" placeholder="Usuário" class="input-field-login" required minlength="3">
+                    <input type="text" name="usuario" placeholder="Usuário" class="input-field-login" required
+                        minlength="3">
                     <div class="input-group-login">
-                        <input type="password" name="senha" placeholder="Senha (mín. 6 caracteres)" class="input-field-login senha" required minlength="6">
+                        <input type="password" name="senha" placeholder="Senha (mín. 6 caracteres)"
+                            class="input-field-login senha" required minlength="6">
                         <span class="toggle-password-login">👁️</span>
                     </div>
                     <button type="submit" class="btn-login">Cadastrar</button>
@@ -47,6 +50,7 @@
             </div>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="/js/script.js"></script>
 </body>
+
 </html>
