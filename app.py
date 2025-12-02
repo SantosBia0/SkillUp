@@ -44,6 +44,11 @@ def login():
 def inicio():
     return render_template("inicio.html")
 
+@app.route("/sobre")
+def sobre():
+    return render_template("sobre.html")
+
+
 @app.route("/cadastrar", methods=["GET","POST"])
 def cadastrar():
     if request.method == "POST":
