@@ -459,7 +459,7 @@ body {
     user-select: none;
 }
 
-.btn-login {
+.btn-enviar {
     width: 100%;
     padding: 12px;
     background: #4A90E2;
@@ -470,7 +470,7 @@ body {
     transition: background 0.3s;
 }
 
-.btn-login:hover {
+.btn-enviar:hover {
     background: #357ABD;
 }
 

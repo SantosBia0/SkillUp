@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // =============================
 // INTERAÇÃO COM USUÁRIO
 // =============================
-const btnEnviar = document.getElementById('btn-enviar');
+const btnEnviar = document.getElementByClass('btn-enviar');
 const usuarioInput = document.getElementById('usuario-input');
 const respostaUsuario = document.getElementById('resposta-usuario');
 
