@@ -81,18 +81,22 @@ const btnEnviar = document.getElementsByClassName('btn-enviar');
 const usuarioInput = document.getElementById('usuario-input');
 const respostaUsuario = document.getElementById('resposta-usuario');
 
-btnEnviar.addEventListener('click', () => {
-    const valor = usuarioInput.value.trim();
+document.querySelectorAll('.btn-enviar').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const valor = usuarioInput.value.trim();
 
-    if (!valor) {
-        respostaUsuario.textContent = "Por favor, digite algo!";
-        return;
-    }
+        if (!valor) {
+            respostaUsuario.textContent = "Por favor, digite algo!";
+            return;
+        }
 
-    // Simples feedback baseado na palavra digitada
-    respostaUsuario.textContent = `Que ótimo! Temos conteúdos incríveis sobre "${valor}" esperando por você. 🚀`;
-    usuarioInput.value = '';
+        respostaUsuario.textContent =
+            `Que ótimo! Temos conteúdos incríveis sobre "${valor}" esperando por você. 🚀`;
+
+        usuarioInput.value = '';
+    });
 });
+
 
     // CARROSSEL
     const carrossel = document.querySelector('.carrossel');

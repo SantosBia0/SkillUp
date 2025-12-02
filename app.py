@@ -14,9 +14,31 @@ def get_db_connection():
     ssl_disabled=False
 )
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def login():
-    return render_template("index.html") 
+    if request.method == "POST":
+        usuario = request.form.get("usuario")
+        senha = request.form.get("senha")
+
+        con = get_db_connection()
+        cursor = con.cursor(dictionary=True)
+
+        cursor.execute(
+            "SELECT * FROM usuarios WHERE usuario=%s AND senha=%s",
+            (usuario, senha)
+        )
+        user = cursor.fetchone()
+
+        cursor.close()
+        con.close()
+
+        if user:
+            return redirect(url_for("inicio"))
+        else:
+            return "Usuário ou senha incorretos!"
+
+    return render_template("index.html")
+
 
 @app.route("/inicio")
 def inicio():
