@@ -145,7 +145,7 @@ document.querySelectorAll('.btn-enviar').forEach(btn => {
 
         setInterval(nextSlide, 5000);
     }
-})
+});
 
 ///////////////////////////////////////////////
 //  LOGIN - CADASTRO
