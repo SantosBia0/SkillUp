@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 import os
 
+app = Flask(__name__, static_folder="static", template_folder="templates")
+
 # Configuração do Banco de Dados (Mantida igual)
 def get_db_connection():
     return mysql.connector.connect(
@@ -52,5 +54,3 @@ def cadastrar():
                 con.close()
 
     return render_template("index.html")
-
-app = Flask(__name__, static_folder="static", template_folder="templates")
