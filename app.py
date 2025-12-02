@@ -22,6 +22,12 @@ def login():
 def inicio():
     return render_template("inicio.html")
 
+@app.route("/test-static")
+def test_static():
+    import os
+    static_path = os.path.join(app.root_path, 'static', 'css', 'style.css')
+    return f"CSS exists: {os.path.exists(static_path)}<br>Path: {static_path}"
+
 @app.route("/cadastrar", methods=["GET","POST"])
 def cadastrar():
     if request.method == "POST":
