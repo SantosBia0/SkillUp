@@ -98,55 +98,6 @@ document.querySelectorAll('.btn-enviar').forEach(btn => {
 });
 
 
-// CARROSSEL
-const carrossel = document.querySelector('.carrossel');
-
-    if (carrossel) {
-        const container = carrossel.querySelector('.carrossel-imagens');
-        const imagens = container.querySelectorAll('img');
-        const prev = carrossel.querySelector('.prev');
-        const next = carrossel.querySelector('.next');
-        const dotsContainer = carrossel.querySelector('.dots');
-
-        let index = 0;
-
-        imagens.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goTo(i));
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = dotsContainer.querySelectorAll('.dot');
-
-        function atualizar() {
-            container.style.transform = `translateX(-${index * 100}%)`;
-            dots.forEach((d, i) => d.classList.toggle('active', i === index));
-        }
-
-        function nextSlide() {
-            index = (index + 1) % imagens.length;
-            atualizar();
-        }
-
-        function prevSlide() {
-            index = (index - 1 + imagens.length) % imagens.length;
-            atualizar();
-        }
-
-        function goTo(i) {
-            index = i;
-            atualizar();
-        }
-
-        if (next) next.addEventListener('click', nextSlide);
-        if (prev) prev.addEventListener('click', prevSlide);
-
-        setInterval(nextSlide, 5000);
-    }
-});
-
 ///////////////////////////////////////////////
 //  LOGIN - CADASTRO
 ///////////////////////////////////////////////
