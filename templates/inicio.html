@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon e CSS do projeto -->
-    <link rel="shortcut icon" href="/imagens/icon1.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicon e CSS -->
+    <link rel="shortcut icon" 
+          href="{{ url_for('static', filename='imagens/icon1.jpg') }}" 
+          type="image/x-icon">
+
+    <link rel="stylesheet" 
+          href="{{ url_for('static', filename='css/style.css') }}">
 
     <!-- Fonte Material Symbols -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" 
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <title>SkillUp</title>
 </head>
@@ -18,7 +23,9 @@
 
         <!-- MENU SUPERIOR -->
         <header class="top-nav">
-            <img src="/imagens/logo-11.png" alt="Logo" class="logo">
+            <img src="{{ url_for('static', filename='imagens/logo-11.png') }}" 
+                 alt="Logo" class="logo">
+
             <input id="menu-toggle" type="checkbox" />
             <label class="menu-button-container" for="menu-toggle">
                 <div class="menu-button"></div>
@@ -27,7 +34,7 @@
             <ul class="menu">
                 <li class="menu-item"><a href="#banner" class="menu-item-link">Início</a></li>
                 <li class="menu-item"><a href="#servicos" class="menu-item-link">Serviços</a></li>
-                <li class="menu-item"><a href="sobre.html" class="menu-item-link">Sobre nós</a></li>
+                <li class="menu-item"><a href="{{ url_for('static', filename='sobre.html') }}" class="menu-item-link">Sobre nós</a></li>
                 <li class="menu-item"><a href="#contato" class="menu-item-link">Contato</a></li>
             </ul>
         </header>
@@ -46,46 +53,53 @@
             </div>
 
             <div class="banner-imagem">
-                <img class="banner-imagem-img" src="/imagens/imagem1.jpg" alt="Pessoa usando laptop em ambiente profissional">
+                <img class="banner-imagem-img" 
+                     src="{{ url_for('static', filename='imagens/imagem1.jpg') }}" 
+                     alt="Pessoa usando laptop">
             </div>
         </div>
 
-        <!-- NOVA SEÇÃO INTERATIVA -->
+        <!-- INTERAÇÃO DO USUÁRIO -->
         <section class="interacao-usuario">
             <h2>Qual conteúdo você quer explorar hoje?</h2>
+
             <div class="interacao-inputs">
                 <input type="text" id="usuario-input" placeholder="Digite seu interesse...">
                 <button id="btn-enviar">Descobrir</button>
             </div>
+
             <p id="resposta-usuario" class="resposta"></p>
         </section>
 
-        <!-- SEÇÃO: O QUE FAZEMOS -->
+        <!-- O QUE FAZEMOS -->
         <section class="secao sobre-fazemos">
             <div class="secao-imagem">
-                <img src="/imagens/imagem4.jpeg" alt="Imagem sobre o que fazemos">
+                <img src="{{ url_for('static', filename='imagens/imagem4.jpeg') }}" alt="O que fazemos">
             </div>
+
             <div class="secao-texto">
                 <h2>O que fazemos</h2>
                 <p>Produzimos séries e conteúdos educativos que transformam carreiras por meio de conhecimento direto.</p>
                 <p>Oferecemos conteúdo prático, acessível e atualizado semanalmente.</p>
-            </div>            
+            </div>
         </section>
 
-        <!-- SEÇÃO: QUEM SOMOS -->
+        <!-- QUEM SOMOS -->
         <section class="secao quem-somos">
             <div class="secao-texto">
                 <h2>Quem somos</h2>
                 <p>Somos uma equipe comprometida com a educação moderna. Valorizamos inovação, simplicidade e aprendizado contínuo.</p>
             </div>
+
             <div class="secao-imagem">
-                <img src="/imagens/imagem3.jpeg" alt="Imagem da equipe">
+                <img src="{{ url_for('static', filename='imagens/imagem3.jpeg') }}" alt="Quem somos">
             </div>
         </section>
 
-        <!-- SEÇÃO: NOSSOS SERVIÇOS -->
-        <section class="servicos">
+        <!-- SERVIÇOS -->
+        <section class="servicos" id="servicos">
             <h2>Nossos serviços</h2>
+
             <div class="cards-servicos">
                 <div class="card">
                     <h3>Consultorias</h3>
@@ -105,29 +119,32 @@
         <!-- CARROSSEL -->
         <div class="carrossel">
             <div class="carrossel-imagens">
-                <img src="/imagens/carrosel1.jpeg" alt="Imagem 1">
-                <img src="/imagens/carrosel2.jpeg" alt="Imagem 2">
-                <img src="/imagens/carrosel3.jpeg" alt="Imagem 3">
+                <img src="{{ url_for('static', filename='imagens/carrosel1.jpeg') }}" alt="Imagem 1">
+                <img src="{{ url_for('static', filename='imagens/carrosel2.jpeg') }}" alt="Imagem 2">
+                <img src="{{ url_for('static', filename='imagens/carrosel3.jpeg') }}" alt="Imagem 3">
             </div>
+
             <button class="prev">&#10094;</button>
             <button class="next">&#10095;</button>
+
             <div class="dots"></div>
         </div>
 
-        <!-- SEÇÃO CONTATO -->
-        <footer class="contato">
+        <!-- CONTATO -->
+        <footer class="contato" id="contato">
             <h2>Contato</h2>
             <p>Fale conosco pelas redes sociais:</p>
+
             <div class="icones">
-                <a href="#"><img src="/imagens/insta.png" alt="Instagram"></a>
-                <a href="#"><img src="/imagens/face.png" alt="Facebook"></a>
-                <a href="#"><img src="/imagens/twi.png" alt="Twitter"></a>
+                <a href="#"><img src="{{ url_for('static', filename='imagens/insta.png') }}" alt="Instagram"></a>
+                <a href="#"><img src="{{ url_for('static', filename='imagens/face.png') }}" alt="Facebook"></a>
+                <a href="#"><img src="{{ url_for('static', filename='imagens/twi.png') }}" alt="Twitter"></a>
             </div>
         </footer>
 
     </div>
 
     <!-- SCRIPT -->
-    <script src="/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
