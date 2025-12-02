@@ -488,6 +488,30 @@ body {
 }
 
 
+/* ACESSO AO JOGO */
+.link-jogo {
+    background-color: #4e4caf;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.link-jogo:hover {
+    background-color: #0056b3;
+}
+
+.box-jogo {
+    display: flex;
+    justify-self: center;
+}
+
 
 /*          RESPONSIVO          */
 @media (max-width: 800px) {
