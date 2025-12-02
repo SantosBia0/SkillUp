@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import mysql.connector
 import os
 
@@ -14,6 +14,11 @@ def get_db_connection():
         port=int(os.environ.get("DB_PORT", 3306))
     )
 
+# ROTA PARA SERVIR ARQUIVOS ESTÁTICOS (importante para Vercel)
+@app.route('/static/<path:path>')
+def send_static(path):
+    return send_from_directory('static', path)
+
 @app.route("/")
 def login():
     return render_template("index.html") 
@@ -21,12 +26,6 @@ def login():
 @app.route("/inicio")
 def inicio():
     return render_template("inicio.html")
-
-@app.route("/test-static")
-def test_static():
-    import os
-    static_path = os.path.join(app.root_path, 'static', 'css', 'style.css')
-    return f"CSS exists: {os.path.exists(static_path)}<br>Path: {static_path}"
 
 @app.route("/cadastrar", methods=["GET","POST"])
 def cadastrar():
@@ -61,7 +60,7 @@ def cadastrar():
                 cursor.close()
                 con.close()
 
-    return render_template("index.html") # Ou sua tela de cadastro separada
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
