@@ -4,15 +4,15 @@ import os
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
-# Configuração do Banco de Dados (Mantida igual)
 def get_db_connection():
     return mysql.connector.connect(
-        host=os.environ.get("DB_HOST", "localhost"),
-        user=os.environ.get("DB_USER", "root"),
-        password=os.environ.get("DB_PASSWORD", "alunolab"),
-        database=os.environ.get("DB_NAME", "saep"),
-        port=int(os.environ.get("DB_PORT", 3306))
-    )
+    host=os.environ["DB_HOST"],
+    user=os.environ["DB_USER"],
+    password=os.environ["DB_PASSWORD"],
+    database=os.environ["DB_NAME"],
+    port=int(os.environ["DB_PORT"]),
+    ssl_disabled=False
+)
 
 @app.route("/")
 def login():
