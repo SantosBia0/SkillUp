@@ -98,8 +98,8 @@ document.querySelectorAll('.btn-enviar').forEach(btn => {
 });
 
 
-    // CARROSSEL
-    const carrossel = document.querySelector('.carrossel');
+// CARROSSEL
+const carrossel = document.querySelector('.carrossel');
 
     if (carrossel) {
         const container = carrossel.querySelector('.carrossel-imagens');
