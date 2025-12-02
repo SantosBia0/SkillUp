@@ -1,12 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 import os
 
-app = Flask(__name__, 
-            template_folder='../templates',
-            static_folder='../static')
+app = Flask(__name__)
 
-# Configuração segura para Nuvem ou Local
+# Configuração do Banco de Dados (Mantida igual)
 def get_db_connection():
     return mysql.connector.connect(
         host=os.environ.get("DB_HOST", "localhost"),
@@ -40,12 +38,10 @@ def cadastrar():
             con = get_db_connection()
             cursor = con.cursor()
             
-            # Verifica se já existe
             cursor.execute("SELECT * FROM usuarios WHERE email=%s OR usuario=%s", (email, usuario))
             if cursor.fetchone():
                 return "Email ou usuário já cadastrado!"
             
-            # Insere novo usuário
             sql = "INSERT INTO usuarios (nome, email, usuario, senha, tipo) VALUES (%s, %s, %s, %s, %s)"
             cursor.execute(sql, (nome, email, usuario, senha, tipo))
             con.commit()
@@ -59,6 +55,5 @@ def cadastrar():
 
     return render_template("index.html")
 
-# Para Vercel
 if __name__ == "__main__":
     app.run(debug=True)
